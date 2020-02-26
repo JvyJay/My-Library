@@ -1,6 +1,6 @@
 # My-Library
 
-Simple library in which you can add your own books.
+Simple library app in which you can add your own books.
 
 # Made with
 

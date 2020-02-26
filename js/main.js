@@ -1,3 +1,4 @@
+// Dummy data
 const booksArray = [
   {
     title: 'The 48 Laws of Power',
@@ -69,3 +70,36 @@ function bookCard(data) {
 
   return col;
 }
+
+// Book Constructor
+function Book(title, author, description) {
+  this.title = title;
+  this.author = author;
+  this.description = description;
+}
+
+// Add book
+function createBook() {
+  const title = document.querySelector('#title').value; // Title input
+  const author = document.querySelector('#author').value; // Author input
+  const description = document.querySelector('#description').value; // Description input
+
+  const book = new Book(title, author, description);
+  const newCard = bookCard(book);
+  cardContainer.prepend(newCard);
+  console.log(book);
+}
+
+// Submission event handler
+const submit = document.querySelector('#addBook');
+const myForm = document.querySelector('#myForm');
+
+submit.addEventListener('click', e => {
+  e.preventDefault();
+  createBook();
+
+  // Resting form input
+  title.value = '';
+  author.value = '';
+  description.value = '';
+});

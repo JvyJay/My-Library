@@ -85,9 +85,10 @@ function createBook() {
   const description = document.querySelector('#description').value; // Description input
 
   const book = new Book(title, author, description);
+
   const newCard = bookCard(book);
+
   cardContainer.prepend(newCard);
-  console.log(book);
 }
 
 // Submission event handler

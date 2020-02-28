@@ -49,8 +49,8 @@ function bookCard(data) {
   cardBtnContainer.appendChild(button);
 
   // Add classes
-  col.classList.add('col', 's12');
-  card.classList.add('card');
+  col.classList.add('col', 's12', 'l6');
+  card.classList.add('card', 'small');
   cardContent.classList.add('card-content', 'black-text');
   title.classList.add('card-title');
   paragraph.style.cssText = 'margin-top: 8px;';
@@ -91,13 +91,33 @@ function createBook() {
   cardContainer.prepend(newCard);
 }
 
+// Validation error message
+function showAlert(msg) {
+  const div = document.createElement('div');
+  div.classList.add('card', 'alert');
+  div.style.cssText = 'border: 1px solid red';
+  div.appendChild(document.createTextNode(msg));
+  const container = document.getElementById('#errorContainer');
+  container.insertBefore(div);
+
+  setTimeout(() => document.querySelector('.alert').remove, 3000);
+}
+
+// Validate
+function validate() {
+  if (title.value === '' || author.value === '' || description.value === '') {
+    window.alert('Please fill in all input fields');
+  } else {
+    createBook();
+  }
+}
+
 // Submission event handler
 const submit = document.querySelector('#addBook');
-const myForm = document.querySelector('#myForm');
 
 submit.addEventListener('click', e => {
   e.preventDefault();
-  createBook();
+  validate();
 
   // Resting form input
   title.value = '';

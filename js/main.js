@@ -106,9 +106,10 @@ function showAlert(msg) {
 // Validate
 function validate() {
   if (title.value === '' || author.value === '' || description.value === '') {
-    window.alert('Please fill in all input fields');
+    swal('Error', 'Please fill in all fields', 'error');
   } else {
     createBook();
+    swal('Good job!', 'Your book was successfully added!', 'success');
   }
 }
 

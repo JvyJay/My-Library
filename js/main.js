@@ -20,6 +20,10 @@ const booksArray = [
   }
 ];
 
+// Body background color
+const body = document.querySelector('body');
+body.style.cssText = 'background: #FFF0F5;';
+
 // Loop through dummy data
 const cardContainer = document.getElementById('bookContainer');
 booksArray.forEach(item => {

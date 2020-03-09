@@ -95,18 +95,6 @@ function createBook() {
   cardContainer.prepend(newCard);
 }
 
-// Validation error message
-function showAlert(msg) {
-  const div = document.createElement('div');
-  div.classList.add('card', 'alert');
-  div.style.cssText = 'border: 1px solid red';
-  div.appendChild(document.createTextNode(msg));
-  const container = document.getElementById('#errorContainer');
-  container.insertBefore(div);
-
-  setTimeout(() => document.querySelector('.alert').remove, 3000);
-}
-
 // Validate
 function validate() {
   if (title.value === '' || author.value === '' || description.value === '') {

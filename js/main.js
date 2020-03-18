@@ -32,7 +32,7 @@ booksArray.forEach(item => {
 });
 
 // Book Card Generator
-function bookCard(data) {
+const bookCard = data => {
   // Create elements
   const col = document.createElement('col');
   const card = document.createElement('div');
@@ -73,7 +73,7 @@ function bookCard(data) {
   });
 
   return col;
-}
+};
 
 // Book Constructor
 function Book(title, author, description) {

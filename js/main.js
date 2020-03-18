@@ -83,7 +83,7 @@ function Book(title, author, description) {
 }
 
 // Add book
-function createBook() {
+const createBook = () => {
   const title = document.querySelector('#title').value; // Title input
   const author = document.querySelector('#author').value; // Author input
   const description = document.querySelector('#description').value; // Description input
@@ -93,17 +93,17 @@ function createBook() {
   const newCard = bookCard(book);
 
   cardContainer.prepend(newCard);
-}
+};
 
 // Validate
-function validate() {
+const validate = () => {
   if (title.value === '' || author.value === '' || description.value === '') {
     swal('Error', 'Please fill in all fields', 'error');
   } else {
     createBook();
     swal('Good job!', 'Your book was successfully added!', 'success');
   }
-}
+};
 
 // Submission event handler
 const submit = document.querySelector('#addBook');

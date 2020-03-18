@@ -24,13 +24,6 @@ const booksArray = [
 const body = document.querySelector('body');
 body.style.cssText = 'background: #FFF0F5;';
 
-// Loop through dummy data
-const cardContainer = document.getElementById('bookContainer');
-booksArray.forEach(item => {
-  const cards = bookCard(item);
-  cardContainer.appendChild(cards);
-});
-
 // Book Card Generator
 const bookCard = data => {
   // Create elements
@@ -74,6 +67,13 @@ const bookCard = data => {
 
   return col;
 };
+
+// Loop through dummy data
+const cardContainer = document.getElementById('bookContainer');
+booksArray.forEach(item => {
+  const cards = bookCard(item);
+  cardContainer.appendChild(cards);
+});
 
 // Book Constructor
 function Book(title, author, description) {
